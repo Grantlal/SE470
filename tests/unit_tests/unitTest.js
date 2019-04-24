@@ -1,4 +1,6 @@
-import React, {Component} from 'react';
+import React, {
+    Component
+} from 'react';
 
 
 export default class unitTest extends Component {
@@ -7,13 +9,11 @@ export default class unitTest extends Component {
     }
 
     render() {
-        return (
-            < div >
-            {this.sum(this.props.num1, this.props.num2)
-    }
-    <
-        /div>
-    )
-        ;
+        return ( <
+            div > {
+                this.sum(this.props.num1, this.props.num2)
+            } <
+            div / >
+        );
     }
 }
