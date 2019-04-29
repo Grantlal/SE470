@@ -33,18 +33,52 @@ describe('Athlete Server Test', function () {
         it('Athlete Insert function', function () {
             //athletes.allow();
             Athletes.insert({
-                name: 'Lexie Brown',
-                baseWeight: '160',
+                name: 'Grant',
+                baseWeight: '175',
                 teamId: randTeamId,
                 createdAt: new Date(),
                 preWeightData: [],
                 postWeightData: []
             });
         });
-        //Testing the edit of an athlete
-        it('Athlete Edit function', function () {
+
+        it('FAIL Negative value Athlete Insert function', function () {
+            //athletes.allow();
+            assert(Athletes.insert({
+                name: 'Mark',
+                baseWeight: '-50',
+                teamId: randTeamId,
+                createdAt: new Date(),
+                preWeightData: [],
+                postWeightData: []
+            }))
         });
 
+        it('FAIL Non number weight, number Name Athlete Insert function', function () {
+            //athletes.allow();
+            assert(Athletes.insert({
+                name: 13,
+                baseWeight: 'Banana',
+                teamId: randTeamId,
+                createdAt: new Date(),
+                preWeightData: [],
+                postWeightData: []
+            }));
+        });
+
+        //Testing the edit of an athlete
+        it('Athlete Edit function', function () {
+            assert(!Athletes.update({
+                _id: userId
+            }, {
+                $set: {
+                    name: 'Grant',
+                    baseWeight: '185',
+                    teamId: randTeamId
+                }
+            }));
+        });
+        
         // beforeEach(() => {
         //     AthletesCollection.remove({});
         //     athleteId = AthletesCollection.insert({
@@ -58,12 +92,7 @@ describe('Athlete Server Test', function () {
 
         //Testing the deletion of an athlete
         it('Athlete Delete function', function () {
-            // const deleteAthlete = Meteor.server.method_handlers['athletes.remove'];
-            // const invocation = { userId };
-            //
-            // deleteAthlete.apply(invocation, [athleteId]);
-            //
-            // assert.equal(Athletes.find().count, 0);
+            assert(!Athletes.remove(userId));
         });
     });
 });

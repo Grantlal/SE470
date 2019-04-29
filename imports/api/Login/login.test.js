@@ -19,16 +19,12 @@ describe('Login Test', function () {
         it('Server Running', function () {
             assert(browser);
         });
-        //Check to see if Roles collection exists
-        it('Can See Roles collection', function () {
-            assert(roles);
-        });
     });
 
     //For Testing Database Methods
     describe('Testing Methods...', function () {
         //Testing the addition of a role
-        it(' Add New Role function', function () {
+        it(' Login to System', function () {
         });
         //Testing the changes to roles
         it(' Roles Change function', function () {

@@ -17,7 +17,6 @@ describe('Roles Server Test', function () {
     describe('Running the basics', function () {
         //Check to see if Server is running
         it('Server Running', function () {
-            assert(browser.get())
         });
         //Check to see if Roles collection exists
         it('Can See Roles collection', function () {
