@@ -8,11 +8,9 @@ export default class unitTest extends Component {
 
     render() {
         return (
-            < div >
-            {this.sum(this.props.num1, this.props.num2)
-    }
-    </div>
-    )
-        ;
+            <div>
+                {this.sum(this.props.num1, this.props.num2)}
+            </div>
+        );
     }
 }
