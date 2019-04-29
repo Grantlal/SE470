@@ -12,30 +12,30 @@ describe("unitTest", function () {
     });
 });
 
-//George's Attempt
-// describe( 'Add an athlete', function() {
-//     it( 'should create a new athlete @watch', function () {
-//         browser.url( 'http://localhost:3000/app/masterReport')
-//             .setValue('[name="name")', 'Test Guy')
-//             .setValue('[name="baseWeight"]', '155')
-//             .setValue('[name="height"]', '72')
-//             .submitForm('form');
-//     })
-//
-//     var getAthlete = server.execute(function(){
-//         const {AthletesOld} = require('../../imports/api/athletes.jsx');
-//         return AthletesOld.findOne({name:'Test Guy'});
-//     })
-//
-//     expect(getAthlete.name).to.equal('Test Guy');
-//
-//     afterEach( function() {
-//         server.execute( function() {
-//             const {AthletesOld} = require('../../imports/api/athletes.jsx');
-//             var athlete = AthletesOld.findOne( {name: 'Test Guy', baseWeight: '155', height:'72' });
-//             if (athlete) {
-//                 AthletesOld.remove( athlete._id );
-//             }
-//         })
-//     })
-// });
+//Grant's Attempt
+ describe( 'Add an athlete', function() {
+     it( 'should create a new athlete @watch', function () {
+         browser.url( 'http://localhost:3000/app/masterReport')
+             .setValue('[name="name")', 'Grant')
+             .setValue('[name="baseWeight"]', '175')
+             .setValue('[name="height"]', '70')
+             .submitForm('form');
+     })
+
+     var getAthlete = server.execute(function(){
+         const {AthletesOld} = require('../../imports/api/athletes.jsx');
+         return AthletesOld.findOne({name:'Grant'});
+     })
+
+     expect(getAthlete.name).to.equal('Grant');
+
+     afterEach( function() {
+         server.execute( function() {
+             const {AthletesOld} = require('../../imports/api/athletes.jsx');
+             var athlete = AthletesOld.findOne( {name: 'Grant', baseWeight: '175', height:'70' });
+             if (athlete) {
+                 AthletesOld.remove( athlete._id );
+             }
+         })
+     })
+ });
