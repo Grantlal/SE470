@@ -4,6 +4,8 @@ import {Random} from 'meteor/random';
 import {AthletesCollection} from './Athletes';
 import {methods} from '../Athletes/methods.js';
 
+var athletes = require('./athletes');
+var assert = require('assert');
 /* By default the test will run as both a server and client,
     I set the test report as a server */
 if (Meteor.isClient) return false;
@@ -21,6 +23,7 @@ describe('Athlete Server Test', function () {
         });
         //Check to see if Roles collection exists
         it('Can see collection', function () {
+            assert(athletes);
         });
     });
 

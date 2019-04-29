@@ -11,8 +11,7 @@ export default class unitTest extends Component {
             < div >
             {this.sum(this.props.num1, this.props.num2)
     }
-    <
-        /div>
+    </div>
     )
         ;
     }

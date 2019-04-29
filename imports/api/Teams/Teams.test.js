@@ -4,6 +4,9 @@ import {Teams} from './Teams';
 /*import { TeamsMethods } from '../Teams/methods.js';*/
 import {Random} from 'meteor/random';
 
+var teams = require('./teams');
+var assert = require('assert');
+
 /* By default the test will run as both a server and client,
     I set the test report as a server */
 if (Meteor.isClient) return false;
@@ -17,6 +20,7 @@ describe('Team Server Test', function () {
         });
         //Check to see if Teams collection exists
         it('Can See Teams Collection', function () {
+            assert(teams);
         });
     });
 

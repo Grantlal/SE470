@@ -1,8 +1,11 @@
 import React from 'react';
 import {shallow} from "enzyme";
-import {Roles} from './roles';
+import {ROLES} from './roles';
 /*import { UserMethods } from '../server/methods.js';*/
 import {Random} from 'meteor/random';
+var assert = require('assert');
+var roles = require('./roles');
+//const ROLES = ['ADMIN', 'PUB', 'VIEW'];
 
 /* By default the test will run as both a server and client,
     I set the test report as a server */
@@ -17,6 +20,7 @@ describe('Roles Server Test', function () {
         });
         //Check to see if Roles collection exists
         it('Can See Roles collection', function () {
+            assert(roles);
         });
     });
 
