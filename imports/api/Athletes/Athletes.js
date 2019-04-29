@@ -7,20 +7,22 @@ import {Mongo} from 'meteor/mongo';
 const Athletes = new Mongo.Collection('athletes');
 export default Athletes;
 
-/* Section used for creating and modifying SimpleSchema for Athletes Collection
-     -Provides specifics for all Athletes attributes.
-
+//Section used for creating and modifying SimpleSchema for Athletes Collection
+ //    -Provides specifics for all Athletes attributes.
+/*
 Athletes.allow({
-    insert: () => false,
+    insert: () => true,
     update: () => false,
     remove: () => false
 });
 Athletes.deny({
-    insert: () => true,
+    insert: () => false,
     update: () => true,
     remove: () => true
 });
-Athletes.schema = new SimpleSchema({
+
+Athletes.insert({});
+/*Athletes.schema = new SimpleSchema({
     name: {
         type: String,
         label: 'Name of the team',
@@ -49,5 +51,4 @@ Athletes.schema = new SimpleSchema({
         type: Array,
         label: 'PostWeights of the Athlete'
     }
-});
-*/
+});*/

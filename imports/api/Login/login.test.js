@@ -1,10 +1,10 @@
 import React from 'react';
 import {shallow} from "enzyme";
-import {ROLES} from './roles';
 /*import { UserMethods } from '../server/methods.js';*/
 import {Random} from 'meteor/random';
 var assert = require('assert');
-var roles = require('./roles');
+const browser = 'http://localhost:3000';
+
 //const roles = ['ADMIN', 'PUB', 'VIEW'];
 
 /* By default the test will run as both a server and client,
@@ -12,12 +12,12 @@ var roles = require('./roles');
 if (Meteor.isClient) return false;
 
 /*Roles Collection Testing*/
-describe('Roles Server Test', function () {
+describe('Login Test', function () {
     //Initial Checks
     describe('Running the basics', function () {
         //Check to see if Server is running
         it('Server Running', function () {
-            assert(browser.get())
+            assert(browser);
         });
         //Check to see if Roles collection exists
         it('Can See Roles collection', function () {

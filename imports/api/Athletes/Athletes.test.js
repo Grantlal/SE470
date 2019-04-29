@@ -3,9 +3,9 @@ import {shallow} from "enzyme";
 import {Random} from 'meteor/random';
 import {AthletesCollection} from './Athletes';
 import {methods} from '../Athletes/methods.js';
-
-var athletes = require('./athletes');
+import Athletes from './Athletes.js';
 var assert = require('assert');
+//var Athletes = require('./Athletes');
 /* By default the test will run as both a server and client,
     I set the test report as a server */
 if (Meteor.isClient) return false;
@@ -23,7 +23,7 @@ describe('Athlete Server Test', function () {
         });
         //Check to see if Roles collection exists
         it('Can see collection', function () {
-            assert(athletes);
+            assert(Athletes);
         });
     });
 
@@ -31,6 +31,15 @@ describe('Athlete Server Test', function () {
     describe('Testing Methods...', function () {
         //Testing the addition of an athlete
         it('Athlete Insert function', function () {
+            //athletes.allow();
+            Athletes.insert({
+                name: 'Lexie Brown',
+                baseWeight: '160',
+                teamId: randTeamId,
+                createdAt: new Date(),
+                preWeightData: [],
+                postWeightData: []
+            });
         });
         //Testing the edit of an athlete
         it('Athlete Edit function', function () {
