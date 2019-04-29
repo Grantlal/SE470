@@ -1,5 +1,7 @@
 // Package Imports
-import {Mongo} from 'meteor/mongo';
+import {
+    Mongo
+} from 'meteor/mongo';
 /*import SimpleSchema from 'simpl-schema';*/
 // Custom File and Collection Imports
 
@@ -9,7 +11,8 @@ export default Athletes;
 
 /* Section used for creating and modifying SimpleSchema for Athletes Collection
      -Provides specifics for all Athletes attributes.
-
+*/
+/*
 Athletes.allow({
     insert: () => false,
     update: () => false,
