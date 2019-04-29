@@ -38,8 +38,20 @@ describe('Team Server Test', function () {
             })
         });
         //Testing the edit of a team
-        it(' Team Edit function', function () {});
+        it(' Team Edit function', function () {
+            Teams.update({
+                _id: userID
+            }, {
+                $set: {
+                    name: 'Change the name to SE 480 because that is the best class ever',
+                    season: 'Fall'
+                }
+            });
+
+        });
         //Testing the removal of a team
-        it(' Team Remove function', function () {});
+        it(' Team Remove function', function () {
+            Teams.remove(userID);
+        });
     });
 });
