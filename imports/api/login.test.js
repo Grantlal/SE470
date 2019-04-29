@@ -2,24 +2,16 @@
 /* eslint-disable func-names, prefer-arrow-callback */
 
 describe('Log In', function () {
-    beforeEach(function () {
+    it('should allow us to login', function () {
         server.execute(function () {
-            const {Meteor} = require('meteor/meteor');
-            const user = Meteor.users.findOne({'emails.address': 'john.doe@site.com'});
-            if (user) {
-                Meteor.users.remove(user._id);
-            }
-        });
-    });
-
-    it('should allow us to login @watch', function () {
-        server.execute(function () {
-            const {Accounts} = require('meteor/accounts-base');
             Accounts.createUser({
                 email: 'john.doe@site.com',
                 password: 'pswd',
                 profile: {
-                    name: {first: 'John', last: 'Doe'},
+                    name: {
+                        first: 'John',
+                        last: 'Doe'
+                    },
                 },
             });
         });

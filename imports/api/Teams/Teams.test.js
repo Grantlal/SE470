@@ -21,8 +21,6 @@ describe('Team Server Test', function () {
     describe('Running the basics', function () {
         //Check to see if Server is running
         it('Server Running', function () {});
-        //Check to see if Teams collection exists
-        it('Can See Teams Collection', function () {});
     });
 
     //For Testing Database Methods
@@ -30,7 +28,7 @@ describe('Team Server Test', function () {
         //Testing the addition of a new team
         it(' Team Insert function', function () {
             Teams.insert({
-                name: 'Team 430 is the best class to ever be created ever',
+                name: 'Best class',
                 season: 'Spring',
                 whoCreated: userID,
                 usersAccess: userID,

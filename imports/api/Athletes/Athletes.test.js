@@ -22,8 +22,6 @@ describe('Athlete Server Test', function () {
     describe('Running the basics', function () {
         //Check to see if Server is running
         it('Server Running', function () {});
-        //Check to see if Roles collection exists
-        it('Can see collection', function () {});
     });
 
     //For Testing Database Methods
@@ -42,7 +40,15 @@ describe('Athlete Server Test', function () {
 
         //Testing the edit of an athlete
         it('Athlete Edit function', function () {
-
+            Athletes.update({
+                _id: userId
+            }, {
+                $set: {
+                    name: 'Bob Brown',
+                    baseWeight: '185',
+                    teamId: randTeamId
+                }
+            });
         });
 
         //Testing the deletion of an athlete
