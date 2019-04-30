@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "test": "TEST_WATCH=1 meteor test --driver-package meteortesting:mocha --port 3100",
+    "test": "meteor test --driver-package meteortesting:mocha --port 3100",
     "chimp-watch": "chimp --ddp=http://localhost:3000 --watch --mocha --path=tests/users",
     "chimp-test": "chimp --mocha --path=tests/users"
   },
@@ -33,7 +33,11 @@
     "twilio": "^3.15.0"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "chromedriver": "^2.38.2"
+    "chai": "^4.2.0",
+    "chromedriver": "^2.38.2",
+    "jest": "^24.7.1",
+    "mocha": "^6.1.4",
+    "superagent": "^5.0.4",
+    "supertest": "^4.0.2"
   }
 }

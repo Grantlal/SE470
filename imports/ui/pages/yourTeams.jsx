@@ -161,7 +161,7 @@ class YourTeams extends React.Component {
                 <div className="YourTeamHeader">
                     <h3>Your Teams</h3>
                     {props.userRoles[0] === "ADMIN" ?
-                        <Button onClick={this.open} bsStyle="primary">&#43; Create a Team</Button> : ''}
+                        <Button id="CreateTeam" onClick={this.open} bsStyle="primary">&#43; Create a Team</Button> : ''}
                     {props.userRoles[0] === "ADMIN" ?
                         <Button onClick={this.open2} bsStyle="primary">&#43; Import a Team</Button> : ''}
                 </div>
@@ -174,9 +174,9 @@ class YourTeams extends React.Component {
                         <Modal.Body>
                             <form>
                                 <FormGroup>
-                                    <FormControl placeholder='Team Name' label='Team Name' type='text'
+                                    <FormControl placeholder='Team Name' label='Team' type='Team'
                                                  onChange={this.handleTeam}/><br/>
-                                    <FormControl placeholder='Season' label='Season' type='text'
+                                    <FormControl placeholder='Season' label='Season' type='Season'
                                                  onChange={this.handleSeason}/>
                                 </FormGroup>
                             </form>
